@@ -5,8 +5,8 @@
 x = 12
 
 def change_x():
-    x = 99
-
+  global x 
+x = 99
 change_x()
 
 # This prints 12. What do we have to modify in change_x() to get it to print 99?
@@ -19,7 +19,8 @@ def outer():
     y = 120
 
     def inner():
-        y = 999
+      nonlocal y 
+      y = 999
 
     inner()
 
